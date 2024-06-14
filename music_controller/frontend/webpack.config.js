@@ -1,5 +1,3 @@
-// bundles all the js file into one file
-
 const path = require("path");
 const webpack = require("webpack");
 
