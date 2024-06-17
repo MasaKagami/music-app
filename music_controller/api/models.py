@@ -14,7 +14,7 @@ def generate_unique_code():
 
 # Create your models here.
 class Room(models.Model):
-    code = models.CharField(max_length=8, default="", unique=True)
+    code = models.CharField(max_length=8, default=generate_unique_code, unique=True)
     host = models.CharField(max_length=8, unique=True)
     guest_can_pause = models.BooleanField(null=False, default= False) #permission (can guest pause or play music [null=False, means we have to pass a value])
     votes_to_skip = models.IntegerField(null=False, default=1)
@@ -22,3 +22,4 @@ class Room(models.Model):
 
     # we want fat models and thin views.
             # meaning put most of your logic in your models.
+
